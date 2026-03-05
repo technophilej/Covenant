@@ -67,3 +67,29 @@
     @apply bg-background text-foreground;
   }
 }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.from-left {
+  transform: translateX(-36px);
+}
+
+.reveal.from-right {
+  transform: translateX(36px);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.reveal.delay-100 { transition-delay: 0.1s; }
+.reveal.delay-200 { transition-delay: 0.2s; }
+.reveal.delay-300 { transition-delay: 0.3s; }
+.reveal.delay-400 { transition-delay: 0.4s; }
+.reveal.delay-500 { transition-delay: 0.5s; }

@@ -15,22 +15,23 @@ export default function HeroSection() {
           sizes="100vw"
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/85 to-brand-navy/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/78 via-brand-navy/60 to-brand-navy/20" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
         <div className="max-w-2xl">
-          <div className="inline-flex items-center gap-2 bg-white/15 border border-white/25 rounded-full px-4 py-1.5 mb-6">
-            <span className="w-2 h-2 rounded-full bg-brand-green-300" />
-            <span className="text-white text-xs font-semibold tracking-wide uppercase">Maine-Based Personal Care Agency</span>
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+          <h1
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
+            style={{ textShadow: '0 2px 16px rgba(0,0,0,0.55)' }}
+          >
             Compassionate Care,{' '}
             <span className="text-brand-green-300">Right at Home</span>
           </h1>
 
-          <p className="text-lg text-blue-100 leading-relaxed mb-10 max-w-xl">
+          <p
+            className="text-lg text-blue-100 leading-relaxed mb-10 max-w-xl"
+            style={{ textShadow: '0 1px 8px rgba(0,0,0,0.45)' }}
+          >
             Covenant Care Services LLC provides in-home personal care assistance — helping members live safely, independently, and with dignity in their own homes across Maine.
           </p>
 
@@ -57,7 +58,7 @@ export default function HeroSection() {
               { icon: Users, text: 'Certified Caregivers' },
               { icon: Heart, text: 'Person-Centered Care' },
             ].map((item) => (
-              <div key={item.text} className="flex items-center gap-2 text-blue-200">
+              <div key={item.text} className="flex items-center gap-2 text-blue-200" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.4)' }}>
                 <item.icon className="w-4 h-4 text-brand-green-400" />
                 <span className="text-sm font-medium">{item.text}</span>
               </div>
