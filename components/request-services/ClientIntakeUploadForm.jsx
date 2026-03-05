@@ -111,8 +111,8 @@ export default function ClientIntakeUploadForm() {
                     <div className="flex items-center justify-center gap-3">
                       <FileText className="w-5 h-5 text-brand-blue-700" suppressHydrationWarning />
                       <span className="text-brand-navy font-medium truncate max-w-[240px]">{intakeFile.name}</span>
-                      <button type="button" onClick={removeFile} className="text-gray-500 hover:text-gray-700">
-                        <X className="w-5 h-5" suppressHydrationWarning />
+                      <button type="button" onClick={removeFile} className="text-gray-500 hover:text-gray-700" aria-label="Remove uploaded file">
+                        <X className="w-5 h-5" suppressHydrationWarning aria-hidden="true" />
                       </button>
                     </div>
                   ) : (
@@ -129,6 +129,7 @@ export default function ClientIntakeUploadForm() {
                   onChange={handleFileChange}
                   className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
                   required
+                  aria-label="Upload completed intake form, PDF format"
                 />
               </div>
             </div>

@@ -58,6 +58,26 @@ Inspired by saferesidential.care — clean, professional healthcare aesthetic, u
 - `allowedDevOrigins` set to `['*']` to allow Replit preview domains
 - Dependencies installed with `--legacy-peer-deps` due to ESLint peer dep conflict between eslint@8 and @eslint/js@10
 
+## Accessibility
+- **Skip-to-content**: Hidden link in Layout.jsx, visible on focus, targets `#main-content`
+- **`prefers-reduced-motion`**: All CSS animations/transitions disabled; Framer Motion animations suppressed via `!important` overrides in globals.css
+- **Focus styles**: Global `*:focus-visible` with `outline-2 outline-offset-2 outline-brand-blue-700`
+- **ARIA landmarks**: `<nav aria-label="Main navigation">`, `<footer aria-label="Site footer">`, `<main id="main-content">`
+- **Mobile menu**: `aria-expanded` on toggle button, `role="menu"` on dropdown, `role="menuitem"` on links
+- **Contact tabs**: `role="tablist"`, `role="tab"` with `aria-selected` and `aria-controls`, `role="tabpanel"` with `aria-labelledby`
+- **Decorative elements**: All icons/shapes marked `aria-hidden="true"`
+- **Form labels**: All inputs have matching `htmlFor`/`id` pairs; file inputs have `aria-label`
+- **Semantic lists**: Footer links and staff qualifications use `<ul>/<li>`, steps use `<ol>/<li>`
+- **Alt text**: Descriptive alt text on all content images; decorative elements hidden
+- **Color contrast**: Body text uses `gray-600`/`gray-700` (4.5:1+ on white); labels use `gray-500` minimum; footer text uses `blue-200`/`blue-300` on navy
+
+## Scroll Animations
+- `Reveal` component (components/ui/Reveal.jsx) + `useInView` hook (hooks/useInView.js)
+- CSS-only animations in globals.css using `.reveal`, `.from-left`, `.from-right`, `.visible` classes
+- IntersectionObserver with 15% threshold, `-40px` bottom margin, fires once per element
+- Delay classes: `delay-100` through `delay-500` (100ms increments)
+- Respects `prefers-reduced-motion` — all transforms/transitions disabled
+
 ## External Images
 - `images.unsplash.com`
 - `qtrypzzcjebvfcihiynt.supabase.co`

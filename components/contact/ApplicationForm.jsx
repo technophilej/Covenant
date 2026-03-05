@@ -117,7 +117,7 @@ export default function ApplicationForm() {
             <div className="space-y-2">
               <Label htmlFor="app-phone">Phone Number *</Label>
               <Input
-                id="phone"
+                id="app-phone"
                 name="phone"
                 type="tel"
                 value={formData.phone}
@@ -139,6 +139,7 @@ export default function ApplicationForm() {
                     onChange={handleFileChange}
                     className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
                     required
+                    aria-label="Upload resume file, PDF DOC or DOCX format"
                   />
                   <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center hover:border-brand-blue-400 transition-colors">
                     <Upload className="w-10 h-10 text-gray-400 mx-auto mb-3" suppressHydrationWarning />
@@ -165,8 +166,9 @@ export default function ApplicationForm() {
                     type="button"
                     onClick={removeFile}
                     className="p-2 hover:bg-brand-blue-100 rounded-lg transition-colors"
+                    aria-label="Remove uploaded file"
                   >
-                    <X className="w-5 h-5 text-gray-500" suppressHydrationWarning />
+                    <X className="w-5 h-5 text-gray-500" suppressHydrationWarning aria-hidden="true" />
                   </button>
                 </div>
               )}

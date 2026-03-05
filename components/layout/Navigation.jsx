@@ -32,23 +32,26 @@ export default function Navigation() {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-shadow duration-300 ${isScrolled ? 'shadow-lg' : ''}`}>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-shadow duration-300 ${isScrolled ? 'shadow-lg' : ''}`}
+      aria-label="Main navigation"
+    >
       <div className="bg-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-10">
             <p className="text-blue-300 text-xs hidden sm:block italic">Compassion. Dignity. Support.</p>
             <div className="flex items-center gap-5 ml-auto">
               <a href="tel:+12072528470" className="flex items-center gap-1.5 text-blue-200 hover:text-white text-xs transition-colors">
-                <Phone className="w-3 h-3" />
-                (207) 252-8470
+                <Phone className="w-3 h-3" aria-hidden="true" />
+                <span>(207) 252-8470</span>
               </a>
               <a href="mailto:contact@covenantcareservices.org" className="hidden md:flex items-center gap-1.5 text-blue-200 hover:text-white text-xs transition-colors">
-                <Mail className="w-3 h-3" />
-                contact@covenantcareservices.org
+                <Mail className="w-3 h-3" aria-hidden="true" />
+                <span>contact@covenantcareservices.org</span>
               </a>
               <div className="hidden lg:flex items-center gap-1.5 text-blue-300 text-xs">
-                <Clock className="w-3 h-3" />
-                Mon–Fri: 8am–6pm
+                <Clock className="w-3 h-3" aria-hidden="true" />
+                <span>Mon–Fri: 8am–6pm</span>
               </div>
             </div>
           </div>
@@ -61,7 +64,7 @@ export default function Navigation() {
             <Link href="/" className="flex-shrink-0">
               <Image
                 src="/images/logo.jpg"
-                alt="Covenant Care Services LLC"
+                alt="Covenant Care Services LLC - Home"
                 width={240}
                 height={96}
                 priority
@@ -74,6 +77,7 @@ export default function Navigation() {
                 <Link
                   key={link.href}
                   href={link.href}
+                  aria-current={isActive(link.href) ? 'page' : undefined}
                   className={`text-sm font-semibold transition-colors duration-200 relative group ${
                     isActive(link.href)
                       ? 'text-brand-navy'
@@ -83,7 +87,7 @@ export default function Navigation() {
                   {link.label}
                   <span className={`absolute -bottom-1 left-0 h-0.5 bg-brand-green-500 transition-all duration-200 ${
                     isActive(link.href) ? 'w-full' : 'w-0 group-hover:w-full'
-                  }`} />
+                  }`} aria-hidden="true" />
                 </Link>
               ))}
             </div>
@@ -100,17 +104,20 @@ export default function Navigation() {
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden p-2 rounded text-brand-navy hover:bg-gray-100 transition-colors"
+              aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isMobileMenuOpen}
             >
-              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isMobileMenuOpen ? <X className="w-5 h-5" aria-hidden="true" /> : <Menu className="w-5 h-5" aria-hidden="true" />}
             </button>
           </div>
 
           {isMobileMenuOpen && (
-            <div className="md:hidden border-t border-gray-100 py-3 space-y-1">
+            <div className="md:hidden border-t border-gray-100 py-3 space-y-1" role="menu">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
+                  role="menuitem"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`block px-3 py-2.5 text-sm font-semibold rounded transition-colors ${
                     isActive(link.href)
@@ -124,6 +131,7 @@ export default function Navigation() {
               <div className="pt-2 px-3">
                 <Link
                   href="/request-services"
+                  role="menuitem"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="block text-center bg-brand-navy hover:bg-brand-blue-800 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-colors"
                 >

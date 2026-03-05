@@ -9,7 +9,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-brand-navy text-white">
+    <footer className="bg-brand-navy text-white" aria-label="Site footer">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="py-16 grid grid-cols-1 md:grid-cols-4 gap-10 border-b border-white/10">
           <div className="md:col-span-2">
@@ -29,7 +29,7 @@ export default function Footer() {
               href="/request-services"
               className="inline-flex items-center gap-2 bg-brand-green-500 hover:bg-brand-green-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-colors"
             >
-              Request Services <ArrowRight className="w-4 h-4" />
+              Request Services <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
           </div>
 
@@ -45,7 +45,7 @@ export default function Footer() {
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-blue-200 hover:text-white text-sm transition-colors flex items-center gap-1.5 group">
-                    <ArrowRight className="w-3 h-3 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                    <ArrowRight className="w-3 h-3 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" aria-hidden="true" />
                     {link.label}
                   </Link>
                 </li>
@@ -58,22 +58,22 @@ export default function Footer() {
             <ul className="space-y-4">
               <li>
                 <a href="tel:+12072528470" className="flex items-start gap-3 group">
-                  <Phone className="w-4 h-4 text-brand-green-400 mt-0.5 flex-shrink-0" />
+                  <Phone className="w-4 h-4 text-brand-green-400 mt-0.5 flex-shrink-0" aria-hidden="true" />
                   <span className="text-blue-200 group-hover:text-white text-sm transition-colors">(207) 252-8470</span>
                 </a>
               </li>
               <li>
                 <a href="mailto:contact@covenantcareservices.org" className="flex items-start gap-3 group">
-                  <Mail className="w-4 h-4 text-brand-green-400 mt-0.5 flex-shrink-0" />
+                  <Mail className="w-4 h-4 text-brand-green-400 mt-0.5 flex-shrink-0" aria-hidden="true" />
                   <span className="text-blue-200 group-hover:text-white text-sm transition-colors break-all">contact@covenantcareservices.org</span>
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-brand-green-400 mt-0.5 flex-shrink-0" />
+                <MapPin className="w-4 h-4 text-brand-green-400 mt-0.5 flex-shrink-0" aria-hidden="true" />
                 <span className="text-blue-200 text-sm">40 Gina Street<br />Lewiston, ME 04240</span>
               </li>
               <li className="flex items-start gap-3">
-                <Clock className="w-4 h-4 text-brand-green-400 mt-0.5 flex-shrink-0" />
+                <Clock className="w-4 h-4 text-brand-green-400 mt-0.5 flex-shrink-0" aria-hidden="true" />
                 <span className="text-blue-200 text-sm">Mon–Fri: 8am–6pm</span>
               </li>
             </ul>
@@ -81,9 +81,9 @@ export default function Footer() {
         </div>
 
         <div className="py-6 flex flex-col md:flex-row justify-between items-center gap-3">
-          <p className="text-blue-400 text-xs">© {currentYear} Covenant Care Services LLC. All rights reserved.</p>
+          <p className="text-blue-300 text-xs">&copy; {currentYear} Covenant Care Services LLC. All rights reserved.</p>
           <div className="flex items-center gap-4">
-            <Link href="/contact#privacy" className="text-blue-400 hover:text-white text-xs transition-colors">Privacy Policy</Link>
+            <Link href="/contact#privacy" className="text-blue-300 hover:text-white text-xs transition-colors">Privacy Policy</Link>
           </div>
         </div>
       </div>

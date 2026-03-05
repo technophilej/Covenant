@@ -66,6 +66,27 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-blue-700;
+  }
+}
+
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 9999;
+  padding: 0.75rem 1.5rem;
+  background: #0B3A66;
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 0 0 0.5rem 0;
+}
+
+.skip-to-content:focus {
+  left: 0;
 }
 
 .reveal {
@@ -93,3 +114,22 @@
 .reveal.delay-300 { transition-delay: 0.3s; }
 .reveal.delay-400 { transition-delay: 0.4s; }
 .reveal.delay-500 { transition-delay: 0.5s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .reveal.from-left,
+  .reveal.from-right {
+    transform: none;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

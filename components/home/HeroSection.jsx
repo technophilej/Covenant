@@ -41,13 +41,13 @@ export default function HeroSection() {
               className="inline-flex items-center justify-center gap-2 bg-brand-green-500 hover:bg-brand-green-600 text-white px-8 py-4 rounded-full font-semibold text-sm transition-all duration-200 shadow-lg group"
             >
               Request Services
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
             </Link>
             <a
               href="tel:+12072528470"
               className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/25 text-white px-8 py-4 rounded-full font-semibold text-sm transition-all duration-200"
             >
-              <Phone className="w-4 h-4" />
+              <Phone className="w-4 h-4" aria-hidden="true" />
               (207) 252-8470
             </a>
           </div>
@@ -59,7 +59,7 @@ export default function HeroSection() {
               { icon: Heart, text: 'Person-Centered Care' },
             ].map((item) => (
               <div key={item.text} className="flex items-center gap-2 text-white/85">
-                <item.icon className="w-4 h-4 text-brand-green-300" />
+                <item.icon className="w-4 h-4 text-brand-green-300" aria-hidden="true" />
                 <span className="text-sm font-semibold">{item.text}</span>
               </div>
             ))}
@@ -67,7 +67,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" aria-hidden="true" />
     </section>
   );
 }
