@@ -34,7 +34,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-widest text-brand-green-400 mb-6">Quick Links</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-white/60 mb-6">Quick Links</h3>
             <ul className="space-y-3">
               {[
                 { href: '/', label: 'Home' },
@@ -54,7 +54,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-widest text-brand-green-400 mb-6">Contact Us</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-white/60 mb-6">Contact Us</h3>
             <ul className="space-y-4">
               <li>
                 <a href="tel:+12072528470" className="flex items-start gap-3 group">
