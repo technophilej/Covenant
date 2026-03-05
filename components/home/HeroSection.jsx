@@ -25,7 +25,7 @@ export default function HeroSection() {
             style={{ textShadow: '0 2px 16px rgba(0,0,0,0.55)' }}
           >
             Compassionate Care,{' '}
-            <span className="text-brand-green-300">Right at Home</span>
+            <span className="text-brand-green-200">Right at Home</span>
           </h1>
 
           <p
@@ -58,9 +58,9 @@ export default function HeroSection() {
               { icon: Users, text: 'Certified Caregivers' },
               { icon: Heart, text: 'Person-Centered Care' },
             ].map((item) => (
-              <div key={item.text} className="flex items-center gap-2 text-blue-200" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.4)' }}>
-                <item.icon className="w-4 h-4 text-brand-green-400" />
-                <span className="text-sm font-medium">{item.text}</span>
+              <div key={item.text} className="flex items-center gap-2 text-white/85">
+                <item.icon className="w-4 h-4 text-brand-green-300" />
+                <span className="text-sm font-semibold">{item.text}</span>
               </div>
             ))}
           </div>
