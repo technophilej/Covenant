@@ -39,17 +39,17 @@ export default function Navigation() {
       <div className="bg-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-10">
-            <p className="text-blue-300 text-xs hidden sm:block italic">Compassion. Dignity. Support.</p>
+            <p className="text-white/80 text-xs hidden sm:block italic">Compassion. Dignity. Support.</p>
             <div className="flex items-center gap-5 ml-auto">
-              <a href="tel:+12072528470" className="flex items-center gap-1.5 text-blue-200 hover:text-white text-xs transition-colors">
+              <a href="tel:+12072528470" className="flex items-center gap-1.5 text-white hover:text-brand-green-300 text-xs transition-colors">
                 <Phone className="w-3 h-3" aria-hidden="true" />
                 <span>(207) 252-8470</span>
               </a>
-              <a href="mailto:contact@covenantcareservices.org" className="hidden md:flex items-center gap-1.5 text-blue-200 hover:text-white text-xs transition-colors">
+              <a href="mailto:contact@covenantcareservices.org" className="hidden md:flex items-center gap-1.5 text-white hover:text-brand-green-300 text-xs transition-colors">
                 <Mail className="w-3 h-3" aria-hidden="true" />
                 <span>contact@covenantcareservices.org</span>
               </a>
-              <div className="hidden lg:flex items-center gap-1.5 text-blue-300 text-xs">
+              <div className="hidden lg:flex items-center gap-1.5 text-white/80 text-xs">
                 <Clock className="w-3 h-3" aria-hidden="true" />
                 <span>Mon–Fri: 8am–6pm</span>
               </div>
