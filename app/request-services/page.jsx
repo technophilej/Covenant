@@ -4,17 +4,33 @@ import React from 'react';
 import Layout from '../../components/layout/Layout';
 import ClientIntakeUploadForm from '../../components/request-services/ClientIntakeUploadForm';
 import { Download, Phone, Mail, CheckCircle, ArrowRight, FileText } from 'lucide-react';
+import Reveal from '../../components/ui/Reveal';
+
+const steps = [
+  'Download and print the Client Intake Form below.',
+  'Complete and sign all sections of the form clearly.',
+  'Scan or photograph the completed form.',
+  'Upload it using the form — a coordinator will follow up within one business day.',
+];
+
+const nextSteps = [
+  'Intake review by a care coordinator',
+  'Assessment of service needs',
+  'Authorized Service Plan created',
+  'Care begins with a matched PSS',
+];
 
 export default function RequestServicesPage() {
   return (
     <Layout>
       <div className="min-h-screen bg-white">
+
         <section className="bg-brand-navy py-20 relative overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full transform translate-x-1/2 -translate-y-1/2" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-green-500 rounded-full transform -translate-x-1/2 translate-y-1/2" />
           </div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="inline-flex items-center gap-2 text-brand-green-400 font-semibold text-sm mb-3">
               <span className="w-8 h-px bg-brand-green-400" />
               Get Started
@@ -23,13 +39,14 @@ export default function RequestServicesPage() {
             <p className="text-blue-200 max-w-xl leading-relaxed">
               Download the client intake form, complete it, and upload it below. A care coordinator will follow up with you promptly.
             </p>
-          </div>
+          </Reveal>
         </section>
 
         <section className="py-16">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
-              <div className="lg:col-span-2 space-y-5">
+
+              <Reveal direction="left" className="lg:col-span-2 space-y-5">
                 <div>
                   <div className="inline-flex items-center gap-2 text-brand-green-600 font-semibold text-sm mb-3">
                     <span className="w-8 h-px bg-brand-green-500" />
@@ -37,12 +54,7 @@ export default function RequestServicesPage() {
                   </div>
                   <h2 className="text-2xl font-bold text-brand-navy mb-5">Simple 4-Step Process</h2>
                   <ol className="space-y-5">
-                    {[
-                      'Download and print the Client Intake Form below.',
-                      'Complete and sign all sections of the form clearly.',
-                      'Scan or photograph the completed form.',
-                      'Upload it using the form — a coordinator will follow up within one business day.',
-                    ].map((step, idx) => (
+                    {steps.map((step, idx) => (
                       <li key={idx} className="flex items-start gap-4">
                         <span className="w-8 h-8 rounded-full bg-brand-navy text-white text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">
                           {idx + 1}
@@ -95,12 +107,7 @@ export default function RequestServicesPage() {
                 <div className="bg-brand-navy rounded-2xl p-5 text-white">
                   <h3 className="font-semibold mb-4 text-sm text-brand-green-400 uppercase tracking-wide">What Happens Next</h3>
                   <ul className="space-y-3">
-                    {[
-                      'Intake review by a care coordinator',
-                      'Assessment of service needs',
-                      'Authorized Service Plan created',
-                      'Care begins with a matched PSS',
-                    ].map((item) => (
+                    {nextSteps.map((item) => (
                       <li key={item} className="flex items-start gap-3 text-blue-100 text-xs">
                         <CheckCircle className="w-4 h-4 text-brand-green-400 flex-shrink-0 mt-0.5" />
                         {item}
@@ -108,9 +115,9 @@ export default function RequestServicesPage() {
                     ))}
                   </ul>
                 </div>
-              </div>
+              </Reveal>
 
-              <div className="lg:col-span-3">
+              <Reveal direction="right" delay={100} className="lg:col-span-3">
                 <div className="mb-6">
                   <div className="inline-flex items-center gap-2 text-brand-green-600 font-semibold text-sm mb-2">
                     <span className="w-8 h-px bg-brand-green-500" />
@@ -119,10 +126,12 @@ export default function RequestServicesPage() {
                   <h2 className="text-2xl font-bold text-brand-navy">Submit Your Intake Form</h2>
                 </div>
                 <ClientIntakeUploadForm />
-              </div>
+              </Reveal>
+
             </div>
           </div>
         </section>
+
       </div>
     </Layout>
   );

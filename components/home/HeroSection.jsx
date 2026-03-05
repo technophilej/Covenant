@@ -15,7 +15,7 @@ export default function HeroSection() {
           sizes="100vw"
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/78 via-brand-navy/60 to-brand-navy/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/88 via-brand-navy/72 to-brand-navy/32" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">

@@ -7,6 +7,7 @@ import {
 import Link from 'next/link';
 import Image from 'next/image';
 import Layout from '../../components/layout/Layout';
+import Reveal from '../../components/ui/Reveal';
 
 const services = [
   {
@@ -79,12 +80,13 @@ export default function Services() {
   return (
     <Layout>
       <div className="min-h-screen bg-white">
+
         <section className="bg-brand-navy py-20 relative overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full transform translate-x-1/2 -translate-y-1/2" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-green-500 rounded-full transform -translate-x-1/2 translate-y-1/2" />
           </div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="inline-flex items-center gap-2 text-brand-green-400 font-semibold text-sm mb-3">
               <span className="w-8 h-px bg-brand-green-400" />
               What We Offer
@@ -93,79 +95,85 @@ export default function Services() {
             <p className="text-blue-200 max-w-2xl leading-relaxed">
               Comprehensive in-home personal care delivered by trained Personal Support Specialists — all according to an authorized Service Plan tailored to each member.
             </p>
-          </div>
+          </Reveal>
         </section>
 
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
-            {services.map((service, index) => (
-              <div
-                key={service.title}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
-              >
-                <div className={`relative ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <div className="relative rounded-2xl overflow-hidden shadow-xl">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      width={600}
-                      height={420}
-                      className="w-full h-[380px] object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-br from-brand-navy/20 to-transparent" />
-                  </div>
-                  <div className={`absolute -bottom-5 ${index % 2 === 1 ? '-left-5' : '-right-5'} w-16 h-16 rounded-2xl shadow-lg flex items-center justify-center ${service.accent}`}>
-                    <service.icon className="w-8 h-8" />
-                  </div>
-                </div>
+            {services.map((service, index) => {
+              const isEven = index % 2 === 1;
+              return (
+                <div
+                  key={service.title}
+                  className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+                >
+                  <Reveal direction={isEven ? 'right' : 'left'} className={`relative ${isEven ? 'lg:order-2' : ''}`}>
+                    <div className="relative rounded-2xl overflow-hidden shadow-xl">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        width={600}
+                        height={420}
+                        className="w-full h-[380px] object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-br from-brand-navy/20 to-transparent" />
+                    </div>
+                    <div className={`absolute -bottom-5 ${isEven ? '-left-5' : '-right-5'} w-16 h-16 rounded-2xl shadow-lg flex items-center justify-center ${service.accent}`}>
+                      <service.icon className="w-8 h-8" />
+                    </div>
+                  </Reveal>
 
-                <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                  <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl mb-5 ${service.accent}`}>
-                    <service.icon className="w-6 h-6" />
-                  </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-brand-navy mb-4">{service.title}</h2>
-                  <p className="text-gray-600 leading-relaxed mb-7 text-lg">{service.description}</p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                    {service.features.map((feature) => (
-                      <div key={feature} className="flex items-center gap-2.5 bg-gray-50 rounded-lg px-3 py-2">
-                        <CheckCircle className="w-4 h-4 text-brand-green-500 flex-shrink-0" />
-                        <span className="text-gray-700 text-sm">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
+                  <Reveal direction={isEven ? 'left' : 'right'} delay={100} className={isEven ? 'lg:order-1' : ''}>
+                    <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl mb-5 ${service.accent}`}>
+                      <service.icon className="w-6 h-6" />
+                    </div>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-brand-navy mb-4">{service.title}</h2>
+                    <p className="text-gray-600 leading-relaxed mb-7 text-lg">{service.description}</p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                      {service.features.map((feature) => (
+                        <div key={feature} className="flex items-center gap-2.5 bg-gray-50 rounded-lg px-3 py-2">
+                          <CheckCircle className="w-4 h-4 text-brand-green-500 flex-shrink-0" />
+                          <span className="text-gray-700 text-sm">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </Reveal>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 
         <section className="py-20 bg-gray-50 border-t border-gray-100">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="inline-flex items-center gap-2 text-brand-green-600 font-semibold text-sm mb-3">
-              <span className="w-8 h-px bg-brand-green-500" />
-              Get Started
-              <span className="w-8 h-px bg-brand-green-500" />
+          <Reveal>
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              <div className="inline-flex items-center gap-2 text-brand-green-600 font-semibold text-sm mb-3">
+                <span className="w-8 h-px bg-brand-green-500" />
+                Get Started
+                <span className="w-8 h-px bg-brand-green-500" />
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-brand-navy mb-4">Ready to Begin?</h2>
+              <p className="text-gray-500 mb-10 leading-relaxed">
+                Contact us today for a free consultation. We will create a personalized care plan to meet your family's unique needs.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/request-services"
+                  className="inline-flex items-center justify-center gap-2 bg-brand-navy hover:bg-brand-blue-800 text-white px-8 py-4 rounded-full font-semibold text-sm transition-colors shadow-lg"
+                >
+                  Request Services <ArrowRight className="w-4 h-4" />
+                </Link>
+                <a
+                  href="tel:+12072528470"
+                  className="inline-flex items-center justify-center gap-2 border-2 border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white px-8 py-4 rounded-full font-semibold text-sm transition-all duration-200"
+                >
+                  <Phone className="w-4 h-4" /> (207) 252-8470
+                </a>
+              </div>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-brand-navy mb-4">Ready to Begin?</h2>
-            <p className="text-gray-500 mb-10 leading-relaxed">
-              Contact us today for a free consultation. We will create a personalized care plan to meet your family's unique needs.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/request-services"
-                className="inline-flex items-center justify-center gap-2 bg-brand-navy hover:bg-brand-blue-800 text-white px-8 py-4 rounded-full font-semibold text-sm transition-colors shadow-lg"
-              >
-                Request Services <ArrowRight className="w-4 h-4" />
-              </Link>
-              <a
-                href="tel:+12072528470"
-                className="inline-flex items-center justify-center gap-2 border-2 border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white px-8 py-4 rounded-full font-semibold text-sm transition-all duration-200"
-              >
-                <Phone className="w-4 h-4" /> (207) 252-8470
-              </a>
-            </div>
-          </div>
+          </Reveal>
         </section>
+
       </div>
     </Layout>
   );

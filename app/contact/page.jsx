@@ -6,6 +6,7 @@ import ApplicationForm from '../../components/contact/ApplicationForm';
 import ContactForm from '../../components/contact/ContactForm';
 import Image from 'next/image';
 import { Phone, Mail, MapPin, Clock, Heart, Users, Award, CheckCircle, ArrowRight } from 'lucide-react';
+import Reveal from '../../components/ui/Reveal';
 
 const contactInfo = [
   { icon: Phone, label: 'Phone', value: '(207) 252-8470', href: 'tel:+12072528470' },
@@ -33,12 +34,13 @@ export default function Contact() {
   return (
     <Layout>
       <div className="min-h-screen bg-white">
+
         <section className="bg-brand-navy py-20 relative overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full transform translate-x-1/2 -translate-y-1/2" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-green-500 rounded-full transform -translate-x-1/2 translate-y-1/2" />
           </div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="inline-flex items-center gap-2 text-brand-green-400 font-semibold text-sm mb-3">
               <span className="w-8 h-px bg-brand-green-400" />
               {activeTab === 'careers' ? 'Join Our Team' : 'Get in Touch'}
@@ -51,14 +53,14 @@ export default function Contact() {
                 ? "We're always looking for compassionate, dedicated caregivers to join our growing team."
                 : "We're here to answer your questions and help you find the right care solution for your family."}
             </p>
-          </div>
+          </Reveal>
         </section>
 
         <section className="bg-white border-b border-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-gray-100">
-              {contactInfo.map((item) => (
-                <div key={item.label} className="py-6 px-6 first:pl-0">
+              {contactInfo.map((item, idx) => (
+                <Reveal key={item.label} delay={idx * 100} className="py-6 px-6 first:pl-0">
                   <div className="flex items-center gap-2 mb-2">
                     <div className="w-8 h-8 rounded-lg bg-brand-blue-50 flex items-center justify-center">
                       <item.icon className="w-4 h-4 text-brand-blue-700" />
@@ -72,7 +74,7 @@ export default function Contact() {
                   ) : (
                     <span className="text-brand-navy text-sm font-semibold">{item.value}</span>
                   )}
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -109,7 +111,7 @@ export default function Contact() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {activeTab === 'contact' && (
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-14 items-start">
-                <div className="lg:col-span-2">
+                <Reveal direction="left" className="lg:col-span-2">
                   <h2 className="text-2xl font-bold text-brand-navy mb-4">Send Us a Message</h2>
                   <p className="text-gray-500 leading-relaxed mb-8 text-sm">
                     Have questions about our services or want to learn more? Fill out the form and we will respond within one business day.
@@ -137,81 +139,90 @@ export default function Contact() {
                     </div>
                     <p className="text-gray-600 text-sm">Proudly serving families throughout the entire state of Maine.</p>
                   </div>
-                </div>
+                </Reveal>
 
-                <div className="lg:col-span-3">
+                <Reveal direction="right" delay={100} className="lg:col-span-3">
                   <ContactForm />
-                </div>
+                </Reveal>
               </div>
             )}
 
             {activeTab === 'careers' && (
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-14 items-start">
-                <div className="lg:col-span-2">
+                <Reveal direction="left" className="lg:col-span-2">
                   <h2 className="text-2xl font-bold text-brand-navy mb-4">Join Our Caregiving Team</h2>
                   <p className="text-gray-500 leading-relaxed mb-8 text-sm">
                     Are you passionate about making a difference in people's lives? We are always looking for compassionate, dedicated caregivers.
                   </p>
 
                   <div className="space-y-3 mb-8">
-                    {benefits.map((benefit) => (
-                      <div key={benefit.title} className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl border border-gray-100">
-                        <div className="w-10 h-10 bg-brand-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                          <benefit.icon className="w-5 h-5 text-brand-blue-700" />
+                    {benefits.map((benefit, idx) => (
+                      <Reveal key={benefit.title} delay={idx * 100}>
+                        <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl border border-gray-100">
+                          <div className="w-10 h-10 bg-brand-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <benefit.icon className="w-5 h-5 text-brand-blue-700" />
+                          </div>
+                          <div>
+                            <h3 className="font-semibold text-brand-navy text-sm mb-1">{benefit.title}</h3>
+                            <p className="text-gray-500 text-xs">{benefit.description}</p>
+                          </div>
                         </div>
-                        <div>
-                          <h3 className="font-semibold text-brand-navy text-sm mb-1">{benefit.title}</h3>
-                          <p className="text-gray-500 text-xs">{benefit.description}</p>
-                        </div>
-                      </div>
+                      </Reveal>
                     ))}
                   </div>
 
-                  <div className="bg-brand-navy rounded-xl p-5 text-white mb-5">
-                    <h3 className="font-semibold mb-4 text-sm text-brand-green-400 uppercase tracking-wide">We Offer</h3>
-                    <ul className="grid grid-cols-2 gap-2">
-                      {['Competitive pay', 'Flexible scheduling', 'Paid training', 'Health benefits', 'Paid time off', 'Referral bonuses'].map((item) => (
-                        <li key={item} className="flex items-center gap-2 text-blue-100 text-xs">
-                          <CheckCircle className="w-3.5 h-3.5 text-brand-green-400 flex-shrink-0" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  <Reveal delay={300}>
+                    <div className="bg-brand-navy rounded-xl p-5 text-white mb-5">
+                      <h3 className="font-semibold mb-4 text-sm text-brand-green-400 uppercase tracking-wide">We Offer</h3>
+                      <ul className="grid grid-cols-2 gap-2">
+                        {['Competitive pay', 'Flexible scheduling', 'Paid training', 'Health benefits', 'Paid time off', 'Referral bonuses'].map((item) => (
+                          <li key={item} className="flex items-center gap-2 text-blue-100 text-xs">
+                            <CheckCircle className="w-3.5 h-3.5 text-brand-green-400 flex-shrink-0" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </Reveal>
 
-                  <div className="border border-gray-100 rounded-xl p-5 bg-gray-50">
-                    <h3 className="font-semibold text-brand-navy mb-2 text-sm">Employment Application</h3>
-                    <p className="text-gray-500 text-xs mb-4">Download the PDF, fill it out, then upload it using the form.</p>
-                    <a
-                      href="/forms/EmploymentApplication.pdf"
-                      download
-                      className="inline-flex items-center gap-2 bg-brand-navy hover:bg-brand-blue-800 text-white px-4 py-2.5 rounded-full text-xs font-semibold transition-colors"
-                    >
-                      Download Application PDF
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </a>
-                  </div>
-                </div>
+                  <Reveal delay={400}>
+                    <div className="border border-gray-100 rounded-xl p-5 bg-gray-50">
+                      <h3 className="font-semibold text-brand-navy mb-2 text-sm">Employment Application</h3>
+                      <p className="text-gray-500 text-xs mb-4">Download the PDF, fill it out, then upload it using the form.</p>
+                      <a
+                        href="/forms/EmploymentApplication.pdf"
+                        download
+                        className="inline-flex items-center gap-2 bg-brand-navy hover:bg-brand-blue-800 text-white px-4 py-2.5 rounded-full text-xs font-semibold transition-colors"
+                      >
+                        Download Application PDF
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </a>
+                    </div>
+                  </Reveal>
+                </Reveal>
 
-                <div className="lg:col-span-3">
+                <Reveal direction="right" delay={100} className="lg:col-span-3">
                   <ApplicationForm />
-                </div>
+                </Reveal>
               </div>
             )}
           </div>
         </section>
 
-        <section id="privacy" className="py-14 bg-gray-50 border-t border-gray-100">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-xl font-bold text-brand-navy mb-4">Privacy Policy</h2>
-            <p className="text-gray-500 leading-relaxed text-sm mb-3">
-              Covenant Care Services LLC respects your privacy. Information submitted through our forms is used only to respond to your request and to coordinate services or employment inquiries. We do not sell your personal information.
-            </p>
-            <p className="text-gray-500 leading-relaxed text-sm">
-              If you have questions about privacy, contact us at contact@covenantcareservices.org or call (207) 252-8470.
-            </p>
-          </div>
-        </section>
+        <Reveal>
+          <section id="privacy" className="py-14 bg-gray-50 border-t border-gray-100">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-xl font-bold text-brand-navy mb-4">Privacy Policy</h2>
+              <p className="text-gray-500 leading-relaxed text-sm mb-3">
+                Covenant Care Services LLC respects your privacy. Information submitted through our forms is used only to respond to your request and to coordinate services or employment inquiries. We do not sell your personal information.
+              </p>
+              <p className="text-gray-500 leading-relaxed text-sm">
+                If you have questions about privacy, contact us at contact@covenantcareservices.org or call (207) 252-8470.
+              </p>
+            </div>
+          </section>
+        </Reveal>
+
       </div>
     </Layout>
   );
