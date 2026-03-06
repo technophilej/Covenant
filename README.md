@@ -1,128 +1,105 @@
 # Covenant Care Services Website
 
-A modern, responsive home care website built with Next.js (App Router), React, Tailwind CSS, and Framer Motion.
+A modern, responsive 4-page healthcare website for **Covenant Care Services LLC** — a Maine-based Personal Care Agency. Built with Next.js (App Router), React 19, Tailwind CSS, and Framer Motion.
 
-## About
+## Pages
 
-Covenant Care Services provides compassionate home care solutions throughout Maine, helping individuals maintain their independence and quality of life in the comfort of their own homes.
+| Route | Page |
+|---|---|
+| `/` | Home |
+| `/services` | Services |
+| `/contact` | Contact Us + Careers (tabbed) |
+| `/request-services` | Request Services / Client Intake |
 
-## Features
+## Tech Stack
 
-- **Modern Design**: Clean, professional interface with smooth animations
-- **Responsive Layout**: Optimized for desktop, tablet, and mobile devices
-- **Interactive Components**: Engaging user experience with Framer Motion animations
-- **Contact Forms**: Functional contact and job application forms
-- **Service Showcase**: Detailed presentation of care services
-- **SEO Friendly**: Semantic HTML5 structure
-
-## Technologies Used
-
-- **Next.js 16 (App Router)** - React framework (routing, bundling, production builds)
-- **React 19** - UI library
-- **Tailwind CSS** - Utility-first CSS framework
-- **Framer Motion** - Animation library
-- **Lucide React** - Icon library
-- **Radix UI** - Accessible UI primitives
-- **ESLint** - Linting
+- **Next.js 16** (App Router, Turbopack)
+- **React 19**
+- **Tailwind CSS** with custom brand color palette
+- **Framer Motion 11** — form transition animations
+- **Lucide React** — icons
+- **Radix UI** — accessible label and button primitives
+- **ESLint 9** (flat config)
 
 ## Getting Started
 
-### Prerequisites
-
-- Node.js (modern LTS recommended)
-- npm or yarn package manager
-
-### Installation
-
-1. Clone the repository:
 ```bash
-git clone <your-repository-url>
-cd covenant_web_dev
-```
-
-2. Install dependencies:
-```bash
+# Install dependencies
 npm install
-```
 
-3. Start the development server:
-```bash
+# Start dev server (http://localhost:3000)
 npm run dev
+
+# Production build
+npm run build
+npm run start
+
+# Lint
+npm run lint
 ```
-
-4. Open your browser and navigate to `http://localhost:3000`
-
-### Available Scripts
-
-- `npm run dev` - Starts the Next.js dev server
-- `npm run build` - Creates a production build
-- `npm run start` - Starts the production server (after `build`)
-- `npm run lint` - Runs ESLint
 
 ## Project Structure
 
 ```
 app/
-├── page.jsx                 # Home (/)
-├── services/page.jsx        # Services (/services)
-└── contact/page.jsx         # Contact (/contact)
+├── layout.jsx                  # Root layout + Google Fonts
+├── globals.css                 # Tailwind base + brand animations + a11y
+├── page.jsx                    # Home (/)
+├── services/page.jsx           # Services (/services)
+├── contact/page.jsx            # Contact + Careers (/contact)
+└── request-services/page.jsx   # Client intake (/request-services)
 
 components/
-├── contact/                 # Contact + application forms
-├── home/                    # Home page sections
-├── layout/                  # Layout, Navigation, Footer
-└── ui/                      # Reusable UI components
+├── layout/
+│   ├── Layout.jsx              # Skip-to-content + nav + footer wrapper
+│   ├── Navigation.jsx          # Two-tier sticky nav
+│   └── Footer.jsx
+├── home/
+│   └── HeroSection.jsx         # Full-width hero with image overlay
+├── contact/
+│   ├── ContactForm.jsx         # Contact message form
+│   └── ApplicationForm.jsx     # Career application + resume upload
+├── request-services/
+│   └── ClientIntakeUploadForm.jsx
+├── ui/
+│   ├── Reveal.jsx              # Scroll-triggered reveal wrapper
+│   ├── button.jsx
+│   ├── input.jsx
+│   ├── label.jsx
+│   └── textarea.jsx
+└── lib/utils.js                # cn() helper
+
+hooks/
+└── useInView.js                # IntersectionObserver hook for Reveal
 
 public/
-└── images/                  # Static images
+├── images/                     # Logo, hero, contact photos
+└── forms/                      # Downloadable PDF forms
 ```
+
+## Accessibility
+
+- Skip-to-content keyboard link
+- ARIA landmarks (`nav`, `main`, `footer`)
+- Full ARIA tab pattern on Contact page
+- `prefers-reduced-motion` support (all animations off)
+- Visible focus rings (`focus-visible`)
+- Semantic HTML — `ul/li`, `ol/li`, heading hierarchy
+- Descriptive alt text on all images; decorative elements `aria-hidden`
+- All form inputs have matching label/id pairs; file inputs have `aria-label`
+
+## Scroll Animations
+
+CSS-only via the `Reveal` component and `useInView` hook. Supports `up`, `left`, and `right` directions with configurable delay (100–500 ms). Fully disabled when `prefers-reduced-motion: reduce` is set.
 
 ## Customization
 
-### Styling
-
-The project uses Tailwind CSS for styling. You can customize the theme by modifying the `tailwind.config.js` file.
-
-### Forms
-
-Contact and application forms are client-side and can be connected to an API route or external form backend as needed.
-
-## Deployment
-
-### Build for Production
-
-```bash
-npm run build
-```
-
-This creates an optimized production build.
-
-### Deploy to Static Hosting
-
-The build folder can be deployed to any static hosting service:
-- Netlify
-- Vercel
-- GitHub Pages
-- AWS S3 + CloudFront
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License.
+- **Brand colors**: Edit `tailwind.config.js` — `brand-navy`, `brand-blue`, `brand-green`, `brand-teal`
+- **Forms**: Currently client-side only. Connect to an API route or form backend (e.g. Resend, Formspree) as needed.
+- **Images**: Unsplash URLs in service/page files; real photos in `public/images/`
 
 ## Contact
 
-For questions about this website or Covenant Care Services:
-
-- Phone: (207) 555-1234
-- Email: info@covenantcareservices.org
-
----
-
+- **Phone**: (207) 252-8470
+- **Email**: contact@covenantcareservices.org
+- **Address**: 40 Gina Street, Lewiston, ME 04240

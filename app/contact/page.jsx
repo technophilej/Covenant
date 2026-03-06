@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Layout from '../../components/layout/Layout';
 import ApplicationForm from '../../components/contact/ApplicationForm';
 import ContactForm from '../../components/contact/ContactForm';

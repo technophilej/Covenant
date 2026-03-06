@@ -13,5 +13,12 @@ yarn-debug.log*
 yarn-error.log*
 
 .vercel
-
 .vscode
+
+# Replit-specific
+.local
+.replit
+replit.md
+.agents
+.cache
+attached_assets

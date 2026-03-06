@@ -1,6 +1,5 @@
 'use client'
 
-import React from 'react';
 import {
   Heart, Home, Users, Clock, Utensils, Car, Pill, Brain, CheckCircle, Phone, ArrowRight
 } from 'lucide-react';

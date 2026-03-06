@@ -1,9 +1,8 @@
 'use client'
 
-import React from 'react';
 import Layout from '../../components/layout/Layout';
 import ClientIntakeUploadForm from '../../components/request-services/ClientIntakeUploadForm';
-import { Download, Phone, Mail, CheckCircle, ArrowRight, FileText } from 'lucide-react';
+import { Download, Phone, Mail, CheckCircle, FileText } from 'lucide-react';
 import Reveal from '../../components/ui/Reveal';
 
 const steps = [
