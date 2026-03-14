@@ -94,7 +94,7 @@ export default function Navigation() {
 
             <div className="hidden md:flex items-center gap-3">
               <Link
-                href="/request-services"
+                href="/request-care"
                 className="bg-brand-navy hover:bg-brand-blue-800 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-colors duration-200 shadow-sm"
               >
                 Request Care
@@ -130,7 +130,7 @@ export default function Navigation() {
               ))}
               <div className="pt-2 px-3">
                 <Link
-                  href="/request-services"
+                  href="/request-care"
                   role="menuitem"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="block text-center bg-brand-navy hover:bg-brand-blue-800 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-colors"

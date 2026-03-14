@@ -165,7 +165,7 @@ export default function Services() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  href="/request-services"
+                  href="/request-care"
                   className="inline-flex items-center justify-center gap-2 bg-brand-navy hover:bg-brand-blue-800 text-white px-8 py-4 rounded-full font-semibold text-sm transition-colors shadow-lg"
                 >
                   Request Care <ArrowRight className="w-4 h-4" aria-hidden="true" />

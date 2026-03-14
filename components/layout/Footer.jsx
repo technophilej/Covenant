@@ -25,7 +25,7 @@ export default function Footer() {
               Providing compassionate, in-home personal care services throughout Maine. Helping members live safely and with dignity in their own homes.
             </p>
             <Link
-              href="/request-services"
+              href="/request-care"
               className="inline-flex items-center gap-2 bg-brand-green-500 hover:bg-brand-green-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-colors"
             >
               Request Care <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -40,7 +40,7 @@ export default function Footer() {
                 { href: '/services', label: 'Services' },
                 { href: '/contact?tab=careers', label: 'Careers' },
                 { href: '/contact', label: 'Contact Us' },
-                { href: '/request-services', label: 'Request Care' },
+                { href: '/request-care', label: 'Request Care' },
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-blue-200 hover:text-white text-sm transition-colors flex items-center gap-1.5 group">

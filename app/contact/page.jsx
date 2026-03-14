@@ -5,7 +5,7 @@ import Layout from '../../components/layout/Layout';
 import ApplicationForm from '../../components/contact/ApplicationForm';
 import ContactForm from '../../components/contact/ContactForm';
 import Image from 'next/image';
-import { Phone, Mail, MapPin, Clock, Heart, Users, Award, CheckCircle, ArrowRight } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Heart, Users, Award, CheckCircle, ArrowRight, Briefcase, FileText } from 'lucide-react';
 import Reveal from '../../components/ui/Reveal';
 
 const contactInfo = [
@@ -15,10 +15,48 @@ const contactInfo = [
   { icon: Clock, label: 'Office Hours', value: 'Mon–Fri: 9am–6pm', href: null },
 ];
 
-const benefits = [
-  { icon: Heart, title: 'Make a Difference', description: 'Help improve the quality of life for members in your community.' },
-  { icon: Users, title: 'Supportive Team', description: 'Work with a caring, professional team that values your contributions.' },
-  { icon: Award, title: 'Growth Opportunities', description: 'Training programs and career advancement paths available.' },
+const positions = [
+  {
+    icon: Heart,
+    title: 'Personal Support Specialist (PSS)',
+    description: 'Assist clients with personal hygiene, dressing, meal prep, medication reminders, and light housekeeping in the comfort of their home.',
+    type: 'Full-Time / Part-Time',
+    location: 'Statewide, Maine',
+  },
+  {
+    icon: Users,
+    title: 'Companion Caregiver',
+    description: 'Provide meaningful companionship, emotional support, and social engagement to help clients feel connected and valued.',
+    type: 'Part-Time / Flexible',
+    location: 'Statewide, Maine',
+  },
+  {
+    icon: Clock,
+    title: 'Live-In Caregiver',
+    description: 'Offer around-the-clock home-based support for clients who need consistent, full-time assistance and supervision.',
+    type: 'Full-Time',
+    location: 'Statewide, Maine',
+  },
+];
+
+const perks = [
+  'Competitive hourly pay',
+  'Flexible scheduling',
+  'Paid training provided',
+  'Health benefit options',
+  'Paid time off (PTO)',
+  'Referral bonuses',
+  'Supportive management',
+  'Career growth paths',
+];
+
+const requirements = [
+  'Genuine passion for helping others in their home',
+  'Reliable transportation and a valid driver\'s license',
+  'Must pass background check and drug screening',
+  'High school diploma or equivalent preferred',
+  'Previous caregiving experience is a plus',
+  'Strong communication and interpersonal skills',
 ];
 
 export default function Contact() {
@@ -58,31 +96,24 @@ export default function Contact() {
 
         <section className="bg-white border-b border-gray-100" aria-label="Contact information">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-gray-100">
-              {contactInfo.map((item, idx) => (
-                <Reveal key={item.label} delay={idx * 100} className="py-6 px-4 sm:px-6 first:pl-0">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="w-8 h-8 rounded-lg bg-brand-blue-50 flex items-center justify-center">
-                      <item.icon className="w-4 h-4 text-brand-blue-700" aria-hidden="true" />
-                    </div>
-                    <span className="text-xs font-semibold uppercase tracking-widest text-gray-500">{item.label}</span>
-                  </div>
-                  {item.href ? (
-                    <a href={item.href} className="text-brand-navy text-sm font-semibold hover:text-brand-blue-700 transition-colors break-words">
-                      {item.value}
-                    </a>
+            <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-100">
+              {contactInfo.map(({ icon: Icon, label, value, href }) => (
+                <div key={label} className="flex flex-col items-center text-center py-6 px-4">
+                  <span className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-1">{label}</span>
+                  {href ? (
+                    <a href={href} className="text-brand-navy font-semibold text-sm hover:text-brand-green-600 transition-colors">{value}</a>
                   ) : (
-                    <span className="text-brand-navy text-sm font-semibold">{item.value}</span>
+                    <span className="text-brand-navy font-semibold text-sm">{value}</span>
                   )}
-                </Reveal>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="bg-gray-50 border-b border-gray-100">
+        <section className="bg-white border-b border-gray-100" aria-label="Page tabs">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex gap-0" role="tablist" aria-label="Contact page sections">
+            <div role="tablist" aria-label="Contact or Careers" className="flex">
               <button
                 onClick={() => setActiveTab('contact')}
                 role="tab"
@@ -117,6 +148,7 @@ export default function Contact() {
 
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
             {activeTab === 'contact' && (
               <div
                 id="panel-contact"
@@ -165,65 +197,158 @@ export default function Contact() {
                 id="panel-careers"
                 role="tabpanel"
                 aria-labelledby="tab-careers"
-                className="grid grid-cols-1 lg:grid-cols-5 gap-14 items-start"
+                className="space-y-14"
               >
-                <Reveal direction="left" className="lg:col-span-2">
-                  <h2 className="text-2xl font-bold text-brand-navy mb-4">Join Our Caregiving Team</h2>
-                  <p className="text-gray-600 leading-relaxed mb-8 text-sm">
-                    Are you passionate about making a difference in people's lives? We are always looking for compassionate, dedicated caregivers.
-                  </p>
 
-                  <div className="space-y-3 mb-8">
-                    {benefits.map((benefit, idx) => (
-                      <Reveal key={benefit.title} delay={idx * 100}>
-                        <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl border border-gray-100">
-                          <div className="w-10 h-10 bg-brand-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                            <benefit.icon className="w-5 h-5 text-brand-blue-700" aria-hidden="true" />
+                <Reveal>
+                  <div className="relative rounded-2xl overflow-hidden min-h-[300px] flex items-center">
+                    <div className="absolute inset-0">
+                      <Image
+                        src="https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?w=1400&q=85"
+                        alt=""
+                        fill
+                        className="object-cover brightness-[0.4]"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/80 to-brand-navy/40" />
+                    </div>
+                    <div className="relative px-10 py-14 max-w-2xl">
+                      <div className="inline-flex items-center gap-2 text-brand-green-300 font-semibold text-sm mb-4">
+                        <Briefcase className="w-4 h-4" aria-hidden="true" />
+                        We&apos;re Hiring
+                      </div>
+                      <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">Make a Difference Every Day</h2>
+                      <p className="text-blue-100 leading-relaxed mb-7 max-w-lg">
+                        Join our compassionate team of caregivers and help Maine families live with dignity and independence right in their own homes.
+                      </p>
+                      <a
+                        href="#careers-apply"
+                        className="inline-flex items-center gap-2 bg-brand-green-500 hover:bg-brand-green-600 text-white px-6 py-3 rounded-full font-semibold text-sm transition-colors shadow-lg"
+                      >
+                        Apply Now <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                      </a>
+                    </div>
+                  </div>
+                </Reveal>
+
+                <div>
+                  <Reveal className="mb-7">
+                    <h3 className="text-xl font-bold text-brand-navy mb-1">Open Positions</h3>
+                    <p className="text-gray-600 text-sm">We are actively hiring for the following roles across Maine.</p>
+                  </Reveal>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    {positions.map((pos, idx) => (
+                      <Reveal key={pos.title} delay={idx * 80}>
+                        <div className="border border-gray-200 rounded-2xl p-6 hover:shadow-md hover:border-brand-green-300 transition-all bg-white group h-full flex flex-col">
+                          <div className="w-11 h-11 bg-brand-green-50 group-hover:bg-brand-green-100 rounded-xl flex items-center justify-center mb-4 transition-colors">
+                            <pos.icon className="w-5 h-5 text-brand-green-600" aria-hidden="true" />
                           </div>
-                          <div>
-                            <h3 className="font-semibold text-brand-navy text-sm mb-1">{benefit.title}</h3>
-                            <p className="text-gray-600 text-xs">{benefit.description}</p>
+                          <h4 className="font-bold text-brand-navy mb-2 text-sm">{pos.title}</h4>
+                          <p className="text-gray-600 text-xs leading-relaxed mb-4 flex-1">{pos.description}</p>
+                          <div className="space-y-1.5 pt-2 border-t border-gray-100">
+                            <div className="flex items-center gap-1.5 text-xs text-gray-500">
+                              <Briefcase className="w-3.5 h-3.5 text-brand-green-500 flex-shrink-0" aria-hidden="true" />
+                              {pos.type}
+                            </div>
+                            <div className="flex items-center gap-1.5 text-xs text-gray-500">
+                              <MapPin className="w-3.5 h-3.5 text-brand-green-500 flex-shrink-0" aria-hidden="true" />
+                              {pos.location}
+                            </div>
                           </div>
                         </div>
                       </Reveal>
                     ))}
                   </div>
+                </div>
 
-                  <Reveal delay={300}>
-                    <div className="bg-brand-navy rounded-xl p-5 text-white mb-5">
-                      <h3 className="font-semibold mb-4 text-sm text-brand-green-300 uppercase tracking-wide">We Offer</h3>
-                      <ul className="grid grid-cols-2 gap-2">
-                        {['Competitive pay', 'Flexible scheduling', 'Paid training', 'Health benefits', 'Paid time off', 'Referral bonuses'].map((item) => (
-                          <li key={item} className="flex items-center gap-2 text-blue-100 text-xs">
-                            <CheckCircle className="w-3.5 h-3.5 text-brand-green-300 flex-shrink-0" aria-hidden="true" />
-                            {item}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  <Reveal direction="left">
+                    <div className="bg-brand-navy rounded-2xl p-8 h-full text-white">
+                      <h3 className="font-bold text-lg mb-6 text-white">Why Work With Us</h3>
+                      <div className="grid grid-cols-2 gap-4">
+                        {perks.map((perk) => (
+                          <div key={perk} className="flex items-start gap-2.5">
+                            <CheckCircle className="w-4 h-4 text-brand-green-300 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                            <span className="text-blue-100 text-sm">{perk}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </Reveal>
+                  <Reveal direction="right">
+                    <div className="bg-gray-50 border border-gray-100 rounded-2xl p-8 h-full">
+                      <h3 className="font-bold text-brand-navy text-lg mb-6">What We Look For</h3>
+                      <ul className="space-y-3">
+                        {requirements.map((req) => (
+                          <li key={req} className="flex items-start gap-3 text-gray-700 text-sm">
+                            <CheckCircle className="w-4 h-4 text-brand-green-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                            {req}
                           </li>
                         ))}
                       </ul>
                     </div>
                   </Reveal>
+                </div>
 
-                  <Reveal delay={400}>
-                    <div className="border border-gray-100 rounded-xl p-5 bg-gray-50">
-                      <h3 className="font-semibold text-brand-navy mb-2 text-sm">Apply for a Job</h3>
-                      <p className="text-gray-600 text-xs mb-4">Download the PDF, fill it out, then upload it using the form.</p>
+                <div id="careers-apply" className="scroll-mt-[140px] grid grid-cols-1 lg:grid-cols-5 gap-10 items-start pt-4">
+                  <Reveal direction="left" className="lg:col-span-2 space-y-5">
+                    <div>
+                      <div className="inline-flex items-center gap-2 text-brand-green-700 font-semibold text-sm mb-3">
+                        <span className="w-8 h-px bg-brand-green-500" aria-hidden="true" />
+                        Apply Online
+                      </div>
+                      <h3 className="text-2xl font-bold text-brand-navy mb-2">Apply for a Position</h3>
+                      <p className="text-gray-600 text-sm leading-relaxed">
+                        Ready to join our team? Fill out the form to apply online, or download the PDF application below and upload it when ready.
+                      </p>
+                    </div>
+
+                    <div className="bg-brand-blue-50 border border-brand-blue-100 rounded-xl p-5">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-10 h-10 bg-brand-blue-700 rounded-xl flex items-center justify-center">
+                          <FileText className="w-5 h-5 text-white" aria-hidden="true" />
+                        </div>
+                        <div>
+                          <h4 className="font-bold text-brand-navy text-sm">Employment Application</h4>
+                          <p className="text-gray-600 text-xs">PDF — print, fill out, and upload below</p>
+                        </div>
+                      </div>
                       <a
                         href="/forms/EmploymentApplication.pdf"
                         download
-                        className="inline-flex items-center gap-2 bg-brand-navy hover:bg-brand-blue-800 text-white px-4 py-2.5 rounded-full text-xs font-semibold transition-colors"
+                        className="inline-flex items-center gap-2 bg-brand-navy hover:bg-brand-blue-800 text-white px-4 py-2.5 rounded-full text-xs font-semibold transition-colors w-full justify-center"
                       >
-                        Download Application PDF
+                        Download PDF Application
                         <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
                       </a>
                     </div>
-                  </Reveal>
-                </Reveal>
 
-                <Reveal direction="right" delay={100} className="lg:col-span-3">
-                  <ApplicationForm />
-                </Reveal>
+                    <div className="border border-gray-100 rounded-xl p-5 bg-white">
+                      <h4 className="font-semibold text-brand-navy mb-3 text-sm">Questions? Contact Us</h4>
+                      <div className="space-y-3">
+                        <a href="tel:+12072528470" className="flex items-center gap-3 text-sm text-gray-700 hover:text-brand-navy transition-colors">
+                          <div className="w-8 h-8 bg-gray-50 rounded-lg flex items-center justify-center border border-gray-100">
+                            <Phone className="w-4 h-4 text-brand-blue-700" aria-hidden="true" />
+                          </div>
+                          (207) 252-8470
+                        </a>
+                        <a href="mailto:contact@covenantcareservices.org" className="flex items-center gap-3 text-sm text-gray-700 hover:text-brand-navy transition-colors">
+                          <div className="w-8 h-8 bg-gray-50 rounded-lg flex items-center justify-center border border-gray-100">
+                            <Mail className="w-4 h-4 text-brand-blue-700" aria-hidden="true" />
+                          </div>
+                          contact@covenantcareservices.org
+                        </a>
+                      </div>
+                    </div>
+                  </Reveal>
+
+                  <Reveal direction="right" delay={100} className="lg:col-span-3">
+                    <ApplicationForm />
+                  </Reveal>
+                </div>
+
               </div>
             )}
+
           </div>
         </section>
 
