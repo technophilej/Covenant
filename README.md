@@ -9,7 +9,7 @@ A modern, responsive 4-page healthcare website for **Covenant Care Services LLC*
 | `/` | Home |
 | `/services` | Services |
 | `/contact` | Contact Us + Careers (tabbed) |
-| `/request-services` | Request Services / Client Intake |
+| `/request-care` | Request Care / Client Intake |
 
 ## Tech Stack
 
@@ -24,18 +24,8 @@ A modern, responsive 4-page healthcare website for **Covenant Care Services LLC*
 ## Getting Started
 
 ```bash
-# Install dependencies
 npm install
-
-# Start dev server (http://localhost:3000)
 npm run dev
-
-# Production build
-npm run build
-npm run start
-
-# Lint
-npm run lint
 ```
 
 ## Project Structure
@@ -47,7 +37,7 @@ app/
 ├── page.jsx                    # Home (/)
 ├── services/page.jsx           # Services (/services)
 ├── contact/page.jsx            # Contact + Careers (/contact)
-└── request-services/page.jsx   # Client intake (/request-services)
+└── request-care/page.jsx       # Client intake (/request-care)
 
 components/
 ├── layout/
@@ -73,7 +63,7 @@ hooks/
 └── useInView.js                # IntersectionObserver hook for Reveal
 
 public/
-├── images/                     # Logo, hero, contact photos
+├── images/                     # Logo, hero photo
 └── forms/                      # Downloadable PDF forms
 ```
 
@@ -87,16 +77,6 @@ public/
 - Semantic HTML — `ul/li`, `ol/li`, heading hierarchy
 - Descriptive alt text on all images; decorative elements `aria-hidden`
 - All form inputs have matching label/id pairs; file inputs have `aria-label`
-
-## Scroll Animations
-
-CSS-only via the `Reveal` component and `useInView` hook. Supports `up`, `left`, and `right` directions with configurable delay (100–500 ms). Fully disabled when `prefers-reduced-motion: reduce` is set.
-
-## Customization
-
-- **Brand colors**: Edit `tailwind.config.js` — `brand-navy`, `brand-blue`, `brand-green`, `brand-teal`
-- **Forms**: Currently client-side only. Connect to an API route or form backend (e.g. Resend, Formspree) as needed.
-- **Images**: Unsplash URLs in service/page files; real photos in `public/images/`
 
 ## Contact
 

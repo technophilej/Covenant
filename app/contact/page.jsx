@@ -5,15 +5,8 @@ import Layout from '../../components/layout/Layout';
 import ApplicationForm from '../../components/contact/ApplicationForm';
 import ContactForm from '../../components/contact/ContactForm';
 import Image from 'next/image';
-import { Phone, Mail, MapPin, Clock, Heart, Users, Award, CheckCircle, ArrowRight, Briefcase, FileText } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Heart, Users, CheckCircle, ArrowRight, Briefcase, FileText } from 'lucide-react';
 import Reveal from '../../components/ui/Reveal';
-
-const contactInfo = [
-  { icon: Phone, label: 'Phone', value: '(207) 252-8470', href: 'tel:+12072528470' },
-  { icon: Mail, label: 'Email', value: 'contact@covenantcareservices.org', href: 'mailto:contact@covenantcareservices.org' },
-  { icon: MapPin, label: 'Address', value: '40 Gina Street, Lewiston, ME 04240', href: null },
-  { icon: Clock, label: 'Office Hours', value: 'Mon–Fri: 9am–6pm', href: null },
-];
 
 const positions = [
   {
@@ -92,23 +85,6 @@ export default function Contact() {
                 : "We're here to answer your questions and help you find the right care solution for your family."}
             </p>
           </Reveal>
-        </section>
-
-        <section className="bg-white border-b border-gray-100" aria-label="Contact information">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-100">
-              {contactInfo.map(({ icon: Icon, label, value, href }) => (
-                <div key={label} className="flex flex-col items-center text-center py-6 px-4">
-                  <span className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-1">{label}</span>
-                  {href ? (
-                    <a href={href} className="text-brand-navy font-semibold text-sm hover:text-brand-green-600 transition-colors">{value}</a>
-                  ) : (
-                    <span className="text-brand-navy font-semibold text-sm">{value}</span>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
         </section>
 
         <section className="bg-white border-b border-gray-100" aria-label="Page tabs">
