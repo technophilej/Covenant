@@ -158,7 +158,7 @@ export default function Contact() {
                       <div>
                         <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-1">Call Center</p>
                         <a href="tel:+12072528470" className="text-brand-navy font-semibold text-sm hover:text-brand-green-600 transition-colors block">(207) 252-8470</a>
-                        <p className="text-gray-500 text-xs mt-0.5">Mon–Fri: 9am–6pm</p>
+                        <p className="text-gray-500 text-xs mt-0.5">Mon–Fri: 9:00 AM – 6:00 PM</p>
                       </div>
                     </div>
 
@@ -207,8 +207,8 @@ export default function Contact() {
                   <div className="relative rounded-2xl overflow-hidden min-h-[300px] flex items-center">
                     <div className="absolute inset-0">
                       <Image
-                        src="https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?w=1400&q=85"
-                        alt=""
+                        src="https://images.unsplash.com/photo-1509909756405-be0199881695?w=1400&q=85"
+                        alt="Home care professionals ready to make a difference in clients' lives"
                         fill
                         className="object-cover brightness-[0.4]"
                       />
@@ -311,7 +311,7 @@ export default function Contact() {
                           <FileText className="w-5 h-5 text-white" aria-hidden="true" />
                         </div>
                         <div>
-                          <h4 className="font-bold text-brand-navy text-sm">Employment Application</h4>
+                          <h4 className="font-bold text-brand-navy text-sm">Apply for a Job</h4>
                           <p className="text-gray-600 text-xs">PDF — print, fill out, and upload below</p>
                         </div>
                       </div>

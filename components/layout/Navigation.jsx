@@ -51,7 +51,7 @@ export default function Navigation() {
               </a>
               <div className="hidden lg:flex items-center gap-1.5 text-white/80 text-xs">
                 <Clock className="w-3 h-3" aria-hidden="true" />
-                <span>Mon–Fri: 9am–6pm</span>
+                <span>Mon–Fri: 9:00 AM – 6:00 PM</span>
               </div>
             </div>
           </div>
@@ -97,7 +97,7 @@ export default function Navigation() {
                 href="/request-care"
                 className="bg-brand-navy hover:bg-brand-blue-800 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-colors duration-200 shadow-sm"
               >
-                Request Care
+                Request Care Services
               </Link>
             </div>
 
@@ -135,7 +135,7 @@ export default function Navigation() {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="block text-center bg-brand-navy hover:bg-brand-blue-800 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-colors"
                 >
-                  Request Care
+                  Request Care Services
                 </Link>
               </div>
             </div>

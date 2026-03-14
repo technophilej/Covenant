@@ -104,8 +104,8 @@ export default function HomePage() {
               <div className="relative pt-6 pb-8 pl-0 sm:pl-6 pr-0 sm:pr-6">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                   <Image
-                    src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=85"
-                    alt="A compassionate caregiver sitting with an elderly woman in her home, offering warm, attentive care"
+                    src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=85"
+                    alt="Caregiver providing attentive support to an elderly client in a comfortable home setting"
                     width={600}
                     height={500}
                     className="w-full h-[480px] object-cover object-top"
@@ -284,7 +284,7 @@ export default function HomePage() {
                 href="/request-care"
                 className="inline-flex items-center justify-center gap-2 bg-brand-navy hover:bg-brand-blue-800 text-white px-8 py-4 rounded-full font-semibold text-sm transition-colors shadow-lg"
               >
-                Request Care
+                Request Care Services
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
               <a

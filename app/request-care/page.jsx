@@ -34,7 +34,7 @@ export default function RequestServicesPage() {
               <span className="w-8 h-px bg-brand-green-300" aria-hidden="true" />
               Get Started
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">Request Care</h1>
+            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">Request Care Services</h1>
             <p className="text-blue-100 max-w-xl leading-relaxed">
               Download the Client Recipient Intake Form, complete it, and upload it below. A care coordinator will follow up with you promptly.
             </p>

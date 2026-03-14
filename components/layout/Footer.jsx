@@ -28,7 +28,7 @@ export default function Footer() {
               href="/request-care"
               className="inline-flex items-center gap-2 bg-brand-green-500 hover:bg-brand-green-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-colors"
             >
-              Request Care <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              Request Care Services <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
           </div>
 
@@ -40,7 +40,7 @@ export default function Footer() {
                 { href: '/services', label: 'Services' },
                 { href: '/contact?tab=careers', label: 'Careers' },
                 { href: '/contact', label: 'Contact Us' },
-                { href: '/request-care', label: 'Request Care' },
+                { href: '/request-care', label: 'Request Care Services' },
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-blue-200 hover:text-white text-sm transition-colors flex items-center gap-1.5 group">
@@ -73,7 +73,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Clock className="w-4 h-4 text-brand-green-400 mt-0.5 flex-shrink-0" aria-hidden="true" />
-                <span className="text-blue-200 text-sm">Mon–Fri: 9am–6pm</span>
+                <span className="text-blue-200 text-sm">Mon–Fri: 9:00 AM – 6:00 PM</span>
               </li>
             </ul>
           </div>

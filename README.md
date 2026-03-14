@@ -9,7 +9,7 @@ A modern, responsive 4-page healthcare website for **Covenant Care Services LLC*
 | `/` | Home |
 | `/services` | Services |
 | `/contact` | Contact Us + Careers (tabbed) |
-| `/request-care` | Request Care / Client Intake |
+| `/request-care` | Request Care Services / Client Intake |
 
 ## Tech Stack
 

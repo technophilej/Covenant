@@ -14,8 +14,8 @@ const services = [
     title: 'Personal Care',
     description: 'Our trained caregivers provide compassionate assistance with daily living activities to help maintain dignity and independence.',
     features: ['Bathing and personal hygiene', 'Dressing assistance', 'Grooming and hair care', 'Mobility support', 'Toileting assistance', 'Skin and nail care'],
-    image: 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800&q=85',
-    imageAlt: 'Caregiver gently helping an elderly woman with personal care in a warm home setting',
+    image: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=800&q=85',
+    imageAlt: 'Caregiver assisting a client with personal care in their home',
     accent: 'bg-blue-50 text-brand-blue-700',
   },
   {
@@ -24,7 +24,7 @@ const services = [
     description: 'Meaningful companionship that promotes emotional well-being and social engagement for your loved ones.',
     features: ['Conversation and social interaction', 'Playing games and puzzles', 'Reading together', 'Accompaniment to appointments', 'Light housekeeping', 'Meal planning and preparation'],
     image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=85',
-    imageAlt: 'Group of diverse people sharing a warm moment of companionship together',
+    imageAlt: 'Warm companionship and conversation between caregiver and client at home',
     accent: 'bg-green-50 text-brand-green-600',
   },
   {
@@ -32,8 +32,8 @@ const services = [
     title: 'Respite Care',
     description: 'Temporary relief for family caregivers, allowing them to rest while ensuring quality care continues.',
     features: ['Short-term care coverage', 'Emergency care needs', 'Vacation coverage', 'Weekend relief', 'Overnight care', 'Flexible scheduling'],
-    image: 'https://images.unsplash.com/photo-1523905330026-b8bd1f5f320e?w=800&q=85',
-    imageAlt: 'A family caregiver receiving a break while a professional home care worker takes over supportive care',
+    image: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&q=85',
+    imageAlt: 'Family enjoying peace of mind while a professional caregiver provides respite care at home',
     accent: 'bg-teal-50 text-teal-700',
   },
   {
@@ -41,8 +41,8 @@ const services = [
     title: 'Hourly & Live-In Care',
     description: 'Flexible care options ranging from a few hours a week to around-the-clock live-in assistance.',
     features: ['Minimum 4-hour visits', 'Full-day care options', '24/7 live-in care', 'Night shift coverage', 'Weekend care', 'Holiday coverage'],
-    image: 'https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=800&q=85',
-    imageAlt: 'Caregiver assisting an elderly person at home, providing around-the-clock live-in care',
+    image: 'https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=800&q=85',
+    imageAlt: 'Comfortable home environment with a caregiver providing daily living assistance',
     accent: 'bg-indigo-50 text-indigo-700',
   },
   {
@@ -51,7 +51,7 @@ const services = [
     description: 'Nutritious meal planning and preparation tailored to dietary needs and personal preferences.',
     features: ['Meal planning', 'Grocery shopping', 'Cooking and preparation', 'Special diet accommodations', 'Feeding assistance', 'Kitchen cleanup'],
     image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=85',
-    imageAlt: 'Fresh, nutritious meal being prepared in a home kitchen',
+    imageAlt: 'Nutritious meal being prepared in a client home kitchen by a caregiver',
     accent: 'bg-amber-50 text-amber-700',
   },
   {
@@ -60,7 +60,7 @@ const services = [
     description: 'Safe and reliable transportation to appointments, errands, and social activities.',
     features: ['Medical appointments', 'Grocery shopping', 'Social outings', 'Religious services', 'Family visits', 'Recreational activities'],
     image: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&q=85',
-    imageAlt: 'Caregiver providing safe and comfortable transportation to an elderly client',
+    imageAlt: 'Caregiver accompanying a client on a safe and comfortable outing',
     accent: 'bg-sky-50 text-sky-700',
   },
   {
@@ -68,8 +68,8 @@ const services = [
     title: 'Medication Reminders',
     description: 'Assistance with medication management to ensure proper timing and dosage.',
     features: ['Medication reminders', 'Prescription pickup', 'Organizing pill boxes', 'Monitoring intake', 'Communication with pharmacy', 'Family updates'],
-    image: 'https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=800&q=85',
-    imageAlt: 'Organized medication bottles and pill containers for proper medication management',
+    image: 'https://images.unsplash.com/photo-1586105251261-72a756497a11?w=800&q=85',
+    imageAlt: 'Caregiver gently helping a client with daily medication reminders at home',
     accent: 'bg-rose-50 text-rose-700',
   },
   {
@@ -78,7 +78,7 @@ const services = [
     description: 'Specialized care for individuals with memory-related conditions, focusing on safety and quality of life.',
     features: ['Memory care activities', 'Cognitive stimulation', 'Wandering prevention', 'Behavior management', 'Daily routine structure', 'Family education'],
     image: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=800&q=85',
-    imageAlt: 'Caregiver providing supportive memory care to an elderly person with compassion',
+    imageAlt: 'Compassionate caregiver holding hands with an elderly client during memory care at home',
     accent: 'bg-purple-50 text-purple-700',
   },
 ];
@@ -168,7 +168,7 @@ export default function Services() {
                   href="/request-care"
                   className="inline-flex items-center justify-center gap-2 bg-brand-navy hover:bg-brand-blue-800 text-white px-8 py-4 rounded-full font-semibold text-sm transition-colors shadow-lg"
                 >
-                  Request Care <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  Request Care Services <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
                 <a
                   href="tel:+12072528470"
