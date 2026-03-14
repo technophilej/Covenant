@@ -154,35 +154,62 @@ export default function Contact() {
                 id="panel-contact"
                 role="tabpanel"
                 aria-labelledby="tab-contact"
-                className="grid grid-cols-1 lg:grid-cols-5 gap-14 items-start"
+                className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start"
               >
-                <Reveal direction="left" className="lg:col-span-2">
-                  <h2 className="text-2xl font-bold text-brand-navy mb-4">Send Us a Message</h2>
-                  <p className="text-gray-600 leading-relaxed mb-8 text-sm">
-                    Have questions about our services or want to learn more? Fill out the form and we will respond within one business day.
-                  </p>
+                <Reveal direction="left" className="lg:col-span-2 space-y-5">
+                  <div>
+                    <h2 className="text-2xl font-bold text-brand-navy mb-2">Call Us or Fill The Form</h2>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      Call us to book a meetup or send us a message to request a service consultation. We&apos;re here to help.
+                    </p>
+                  </div>
 
-                  <div className="relative rounded-2xl overflow-hidden shadow-md mb-6">
-                    <Image
-                      src="/images/contact/caregiver-with-client.jpg"
-                      alt="Caregiver providing compassionate support to a client in their home"
-                      width={500}
-                      height={280}
-                      className="w-full h-52 object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/60 to-transparent" />
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <p className="text-white font-bold text-sm">Serving All of Maine</p>
-                      <p className="text-blue-100 text-xs">From Portland to Bangor and everywhere in between</p>
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-4 bg-gray-50 border border-gray-100 rounded-2xl p-5 hover:border-brand-green-300 transition-colors">
+                      <div className="w-11 h-11 bg-brand-navy rounded-xl flex items-center justify-center flex-shrink-0">
+                        <MapPin className="w-5 h-5 text-white" aria-hidden="true" />
+                      </div>
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-1">Location</p>
+                        <p className="text-brand-navy font-semibold text-sm leading-snug">40 Gina Street,<br />Lewiston, ME 04240</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4 bg-gray-50 border border-gray-100 rounded-2xl p-5 hover:border-brand-green-300 transition-colors">
+                      <div className="w-11 h-11 bg-brand-navy rounded-xl flex items-center justify-center flex-shrink-0">
+                        <Phone className="w-5 h-5 text-white" aria-hidden="true" />
+                      </div>
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-1">Call Center</p>
+                        <a href="tel:+12072528470" className="text-brand-navy font-semibold text-sm hover:text-brand-green-600 transition-colors block">(207) 252-8470</a>
+                        <p className="text-gray-500 text-xs mt-0.5">Mon–Fri: 9am–6pm</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4 bg-gray-50 border border-gray-100 rounded-2xl p-5 hover:border-brand-green-300 transition-colors">
+                      <div className="w-11 h-11 bg-brand-navy rounded-xl flex items-center justify-center flex-shrink-0">
+                        <Mail className="w-5 h-5 text-white" aria-hidden="true" />
+                      </div>
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-1">Email Us</p>
+                        <a href="mailto:contact@covenantcareservices.org" className="text-brand-navy font-semibold text-sm hover:text-brand-green-600 transition-colors break-all">contact@covenantcareservices.org</a>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="bg-brand-blue-50 rounded-xl p-5 border border-brand-blue-100">
-                    <div className="flex items-center gap-3 mb-3">
-                      <MapPin className="w-5 h-5 text-brand-blue-700" aria-hidden="true" />
-                      <span className="font-semibold text-brand-navy text-sm">Service Area</span>
+                  <div className="pt-1">
+                    <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">Follow Us</p>
+                    <div className="flex items-center gap-3">
+                      <a href="#" aria-label="Facebook" className="w-9 h-9 bg-brand-navy hover:bg-brand-green-500 rounded-lg flex items-center justify-center transition-colors">
+                        <svg className="w-4 h-4 text-white fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                      </a>
+                      <a href="#" aria-label="Instagram" className="w-9 h-9 bg-brand-navy hover:bg-brand-green-500 rounded-lg flex items-center justify-center transition-colors">
+                        <svg className="w-4 h-4 text-white fill-current" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path fill="white" d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="white" strokeWidth="2" strokeLinecap="round"/></svg>
+                      </a>
+                      <a href="#" aria-label="Twitter / X" className="w-9 h-9 bg-brand-navy hover:bg-brand-green-500 rounded-lg flex items-center justify-center transition-colors">
+                        <svg className="w-4 h-4 text-white fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                      </a>
                     </div>
-                    <p className="text-gray-700 text-sm">Proudly serving families throughout the entire state of Maine.</p>
                   </div>
                 </Reveal>
 
