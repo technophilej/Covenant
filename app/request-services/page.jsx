@@ -6,7 +6,7 @@ import { Download, Phone, Mail, CheckCircle, FileText } from 'lucide-react';
 import Reveal from '../../components/ui/Reveal';
 
 const steps = [
-  'Download and print the Client Intake Form below.',
+  'Download and print the Client Recipient Intake Form below.',
   'Complete and sign all sections of the form clearly.',
   'Scan or photograph the completed form.',
   'Upload it using the form — a coordinator will follow up within one business day.',
@@ -14,7 +14,7 @@ const steps = [
 
 const nextSteps = [
   'Intake review by a care coordinator',
-  'Assessment of service needs',
+  'Assessment of care needs',
   'Authorized Service Plan created',
   'Care begins with a matched PSS',
 ];
@@ -34,9 +34,9 @@ export default function RequestServicesPage() {
               <span className="w-8 h-px bg-brand-green-300" aria-hidden="true" />
               Get Started
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">Request Services</h1>
+            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">Request Care</h1>
             <p className="text-blue-100 max-w-xl leading-relaxed">
-              Download the client intake form, complete it, and upload it below. A care coordinator will follow up with you promptly.
+              Download the Client Recipient Intake Form, complete it, and upload it below. A care coordinator will follow up with you promptly.
             </p>
           </Reveal>
         </section>
@@ -70,18 +70,18 @@ export default function RequestServicesPage() {
                       <FileText className="w-5 h-5 text-white" aria-hidden="true" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-brand-navy text-sm">Client Intake Form</h3>
+                      <h3 className="font-bold text-brand-navy text-sm">Client Recipient Intake Form</h3>
                       <p className="text-gray-600 text-xs">PDF format</p>
                     </div>
                   </div>
                   <p className="text-gray-600 text-xs mb-4">Download, complete, then upload below.</p>
                   <a
-                    href="/forms/EmploymentApplication.pdf"
+                    href="/forms/CLIENT_RECIPIENT_INTAKE_FORM.pdf"
                     download
                     className="inline-flex items-center gap-2 bg-brand-navy hover:bg-brand-blue-800 text-white px-5 py-2.5 rounded-full text-xs font-semibold transition-colors w-full justify-center"
                   >
                     <Download className="w-3.5 h-3.5" aria-hidden="true" />
-                    Download Form (PDF)
+                    Download Intake Form (PDF)
                   </a>
                 </div>
 

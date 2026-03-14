@@ -12,7 +12,7 @@ const contactInfo = [
   { icon: Phone, label: 'Phone', value: '(207) 252-8470', href: 'tel:+12072528470' },
   { icon: Mail, label: 'Email', value: 'contact@covenantcareservices.org', href: 'mailto:contact@covenantcareservices.org' },
   { icon: MapPin, label: 'Address', value: '40 Gina Street, Lewiston, ME 04240', href: null },
-  { icon: Clock, label: 'Office Hours', value: 'Mon–Fri: 8am–6pm', href: null },
+  { icon: Clock, label: 'Office Hours', value: 'Mon–Fri: 9am–6pm', href: null },
 ];
 
 const benefits = [
@@ -205,7 +205,7 @@ export default function Contact() {
 
                   <Reveal delay={400}>
                     <div className="border border-gray-100 rounded-xl p-5 bg-gray-50">
-                      <h3 className="font-semibold text-brand-navy mb-2 text-sm">Employment Application</h3>
+                      <h3 className="font-semibold text-brand-navy mb-2 text-sm">Apply for a Job</h3>
                       <p className="text-gray-600 text-xs mb-4">Download the PDF, fill it out, then upload it using the form.</p>
                       <a
                         href="/forms/EmploymentApplication.pdf"

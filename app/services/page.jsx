@@ -14,8 +14,8 @@ const services = [
     title: 'Personal Care',
     description: 'Our trained caregivers provide compassionate assistance with daily living activities to help maintain dignity and independence.',
     features: ['Bathing and personal hygiene', 'Dressing assistance', 'Grooming and hair care', 'Mobility support', 'Toileting assistance', 'Skin and nail care'],
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=85',
-    imageAlt: 'Healthcare professional providing personal care assistance to a patient',
+    image: 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800&q=85',
+    imageAlt: 'Caregiver gently helping an elderly woman with personal care in a warm home setting',
     accent: 'bg-blue-50 text-brand-blue-700',
   },
   {
@@ -32,8 +32,8 @@ const services = [
     title: 'Respite Care',
     description: 'Temporary relief for family caregivers, allowing them to rest while ensuring quality care continues.',
     features: ['Short-term care coverage', 'Emergency care needs', 'Vacation coverage', 'Weekend relief', 'Overnight care', 'Flexible scheduling'],
-    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=85',
-    imageAlt: 'Caring nurse speaking with a patient, providing professional respite care support',
+    image: 'https://images.unsplash.com/photo-1523905330026-b8bd1f5f320e?w=800&q=85',
+    imageAlt: 'A family caregiver receiving a break while a professional home care worker takes over supportive care',
     accent: 'bg-teal-50 text-teal-700',
   },
   {
@@ -59,8 +59,8 @@ const services = [
     title: 'Transportation',
     description: 'Safe and reliable transportation to appointments, errands, and social activities.',
     features: ['Medical appointments', 'Grocery shopping', 'Social outings', 'Religious services', 'Family visits', 'Recreational activities'],
-    image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=85',
-    imageAlt: 'Safe transportation for elderly clients to appointments and errands',
+    image: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&q=85',
+    imageAlt: 'Caregiver providing safe and comfortable transportation to an elderly client',
     accent: 'bg-sky-50 text-sky-700',
   },
   {
@@ -168,7 +168,7 @@ export default function Services() {
                   href="/request-services"
                   className="inline-flex items-center justify-center gap-2 bg-brand-navy hover:bg-brand-blue-800 text-white px-8 py-4 rounded-full font-semibold text-sm transition-colors shadow-lg"
                 >
-                  Request Services <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  Request Care <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
                 <a
                   href="tel:+12072528470"
