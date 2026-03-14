@@ -37,7 +37,6 @@ export default function ApplicationForm() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate file upload
     if (resumeFile) {
       setUploadProgress(30);
       await new Promise(resolve => setTimeout(resolve, 1000));
