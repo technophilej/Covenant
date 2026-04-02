@@ -12,7 +12,7 @@ export default function HeroSection() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center brightness-[0.6]"
+          className="object-cover object-[68%_center] md:object-center brightness-[0.6]"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/92 via-brand-navy/78 to-brand-navy/55" />
       </div>
