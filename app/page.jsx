@@ -108,6 +108,8 @@ export default function HomePage() {
                     alt="Caregiver providing attentive support to an elderly client in a comfortable home setting"
                     width={600}
                     height={500}
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    quality={70}
                     className="w-full h-[480px] object-cover object-top"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/40 to-transparent" />
@@ -175,6 +177,8 @@ export default function HomePage() {
                     alt="Two people holding hands, symbolizing the supportive relationship between caregiver and client"
                     width={600}
                     height={440}
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    quality={70}
                     className="w-full h-[420px] object-cover object-center"
                   />
                   <div className="absolute inset-0 bg-brand-navy/50" />

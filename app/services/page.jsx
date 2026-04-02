@@ -129,6 +129,8 @@ export default function Services() {
                         alt={service.imageAlt}
                         width={600}
                         height={420}
+                        sizes="(min-width: 1024px) 50vw, 100vw"
+                        quality={70}
                         className={`w-full h-[380px] object-cover ${service.imagePosition ?? 'object-center'}`}
                       />
                       <div className="absolute inset-0 bg-gradient-to-br from-brand-navy/20 to-transparent" />
