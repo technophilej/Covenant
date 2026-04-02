@@ -239,7 +239,7 @@ export default function HomePage() {
                 </p>
                 <Link
                   href="/contact?tab=careers"
-                  className="inline-flex items-center gap-2 bg-brand-green-500 hover:bg-brand-green-700 text-white px-7 py-3.5 rounded-full font-semibold text-sm transition-colors"
+                  className="inline-flex items-center gap-2 bg-brand-green-700 hover:bg-brand-green-800 text-white px-7 py-3.5 rounded-full font-semibold text-sm transition-colors"
                 >
                   Join Our Team <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>

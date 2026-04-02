@@ -37,7 +37,7 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4 mb-14">
             <Link
               href="/request-care"
-              className="inline-flex items-center justify-center gap-2 bg-brand-green-500 hover:bg-brand-green-700 text-white px-8 py-4 rounded-full font-semibold text-sm transition-all duration-200 shadow-lg group"
+              className="inline-flex items-center justify-center gap-2 bg-brand-green-700 hover:bg-brand-green-800 text-white px-8 py-4 rounded-full font-semibold text-sm transition-all duration-200 shadow-lg group"
             >
               Request Care Services
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />

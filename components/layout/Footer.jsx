@@ -26,7 +26,7 @@ export default function Footer() {
             </p>
             <Link
               href="/request-care"
-              className="inline-flex items-center gap-2 bg-brand-green-500 hover:bg-brand-green-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-colors"
+              className="inline-flex items-center gap-2 bg-brand-green-700 hover:bg-brand-green-800 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-colors"
             >
               Request Care Services <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>

@@ -228,7 +228,7 @@ export default function Contact() {
                       </p>
                       <a
                         href="#careers-apply"
-                        className="inline-flex items-center gap-2 bg-brand-green-500 hover:bg-brand-green-700 text-white px-6 py-3 rounded-full font-semibold text-sm transition-colors shadow-lg"
+                        className="inline-flex items-center gap-2 bg-brand-green-700 hover:bg-brand-green-800 text-white px-6 py-3 rounded-full font-semibold text-sm transition-colors shadow-lg"
                       >
                         Apply Now <ArrowRight className="w-4 h-4" aria-hidden="true" />
                       </a>
