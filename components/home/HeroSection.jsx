@@ -12,13 +12,13 @@ export default function HeroSection() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[68%_center] md:object-center brightness-[0.6]"
+          className="object-cover object-[56%_center] sm:object-[62%_center] md:object-center brightness-[0.6]"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/92 via-brand-navy/78 to-brand-navy/55" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
-        <div className="max-w-2xl">
+        <div className="max-w-2xl bg-brand-navy/35 md:bg-transparent backdrop-blur-[1px] md:backdrop-blur-0 rounded-2xl md:rounded-none p-5 sm:p-6 md:p-0">
           <h1
             className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
             style={{ textShadow: '0 2px 16px rgba(0,0,0,0.55)' }}
