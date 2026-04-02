@@ -118,7 +118,7 @@ export default function ClientIntakeUploadForm() {
                   ) : (
                     <>
                       <p className="text-brand-navy/75 font-medium">Click to upload your completed intake form</p>
-                      <p className="text-sm text-brand-navy/60 mt-1">PDF (Max 10MB)</p>
+                      <p className="text-sm text-brand-navy/80 mt-1">PDF (Max 10MB)</p>
                     </>
                   )}
                 </div>

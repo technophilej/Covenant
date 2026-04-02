@@ -143,7 +143,7 @@ export default function ApplicationForm() {
                   <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center hover:border-brand-blue-400 transition-colors">
                     <Upload className="w-10 h-10 text-gray-400 mx-auto mb-3" suppressHydrationWarning />
                     <p className="text-brand-navy/75 font-medium">Click to upload your resume</p>
-                    <p className="text-sm text-brand-navy/60 mt-1">PDF, DOC, or DOCX (Max 10MB)</p>
+                    <p className="text-sm text-brand-navy/80 mt-1">PDF, DOC, or DOCX (Max 10MB)</p>
                   </div>
                 </div>
               ) : (
@@ -156,7 +156,7 @@ export default function ApplicationForm() {
                       <p className="font-medium text-brand-navy truncate max-w-[200px]">
                         {resumeFile.name}
                       </p>
-                      <p className="text-sm text-brand-navy/60">
+                      <p className="text-sm text-brand-navy/80">
                         {(resumeFile.size / 1024 / 1024).toFixed(2)} MB
                       </p>
                     </div>
