@@ -1,6 +1,7 @@
 'use client'
 
-import { useState, useEffect } from 'react';
+import { Suspense, useState, useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import Layout from '../../components/layout/Layout';
 import ApplicationForm from '../../components/contact/ApplicationForm';
 import ContactForm from '../../components/contact/ContactForm';
@@ -52,15 +53,22 @@ const requirements = [
   'Strong communication and interpersonal skills',
 ];
 
-export default function Contact() {
+function ContactContent() {
   const [activeTab, setActiveTab] = useState('contact');
+  const router = useRouter();
+  const searchParams = useSearchParams();
 
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    if (params.get('tab') === 'careers') {
-      setActiveTab('careers');
-    }
-  }, []);
+    setActiveTab(searchParams.get('tab') === 'careers' ? 'careers' : 'contact');
+  }, [searchParams]);
+
+  const openContactTab = () => {
+    router.push('/contact');
+  };
+
+  const openCareersTab = () => {
+    router.push('/contact?tab=careers');
+  };
 
   return (
     <Layout>
@@ -91,7 +99,7 @@ export default function Contact() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div role="tablist" aria-label="Contact or Careers" className="flex">
               <button
-                onClick={() => setActiveTab('contact')}
+                onClick={openContactTab}
                 role="tab"
                 aria-selected={activeTab === 'contact'}
                 aria-controls="panel-contact"
@@ -105,7 +113,7 @@ export default function Contact() {
                 Contact Us
               </button>
               <button
-                onClick={() => setActiveTab('careers')}
+                onClick={openCareersTab}
                 role="tab"
                 aria-selected={activeTab === 'careers'}
                 aria-controls="panel-careers"
@@ -374,5 +382,13 @@ export default function Contact() {
 
       </div>
     </Layout>
+  );
+}
+
+export default function Contact() {
+  return (
+    <Suspense fallback={null}>
+      <ContactContent />
+    </Suspense>
   );
 }
