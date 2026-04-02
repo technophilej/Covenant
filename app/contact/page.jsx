@@ -210,6 +210,9 @@ export default function Contact() {
                         src="https://images.unsplash.com/photo-1509909756405-be0199881695?w=1400&q=85"
                         alt="Home care professionals ready to make a difference in clients' lives"
                         fill
+                        priority
+                        loading="eager"
+                        sizes="(min-width: 1024px) 75vw, 100vw"
                         className="object-cover brightness-[0.4]"
                       />
                       <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/80 to-brand-navy/40" />
